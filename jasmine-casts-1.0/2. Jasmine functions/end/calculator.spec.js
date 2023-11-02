@@ -1,3 +1,9 @@
+// This file contains the Jasmine tests for calculator.js.
+// Describe: groups related tests together.
+// It: a single test. Stands for 
+// Expect: a single assertion.
+// ToBe: a matcher. Used to compare the actual value to the expected value.
+
 describe('calculator.js', function() {
   it('should add numbers to total', function() {
     const calculator = new Calculator();

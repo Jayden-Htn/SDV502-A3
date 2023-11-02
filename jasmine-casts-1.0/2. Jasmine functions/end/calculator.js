@@ -1,7 +1,12 @@
+// This file contains the calculator constructor and functionality.
+
 /**
  * Calculator function constructor.
  * @constructor
  */
+// Set up a Calculator to perform the operations.
+// Default total is 0 as this is the starting value.
+// Calculator() is a function constructor, which means it is a function that is used to construct objects.
 function Calculator() {
   this.total = 0;
 }
@@ -12,6 +17,9 @@ function Calculator() {
  * @param {number} number
  * @returns {*}
  */
+// Add methods to the Calculator prototype.
+// The prototype is an object that exists on every function in JavaScript.
+// Prototype must be used because the Calculator function constructor is not a class.
 Calculator.prototype.add = function (number) {
   return this.total += number;
 };
