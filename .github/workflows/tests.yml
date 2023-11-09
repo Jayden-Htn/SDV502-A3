@@ -1,0 +1,51 @@
+# Workflow to unit tests on push to develop branch and pull request to main branch
+
+name: Unit Tests
+
+# Trigger the workflow on push or pull request,
+on:
+  push:
+    branches: "develop"
+  pull_request:
+    branches: "main"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch: {}
+
+jobs:
+  # Job to run unit tests
+  test:
+    # Ubuntu as the virtual machine because it is the most common
+    runs-on: ubuntu-latest
+
+    # Steps to complete the job
+    steps:
+      # Checkout the code
+      - name: Get Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+
+      # Install dependancies
+      - name: Install Dependancies
+        run: npm install
+
+      # Run unit tests
+      - name: Run Unit Tests
+        run: npm test
+
+      # Display test results
+      - name: Output Github Information
+        run: echo " ${{ toJSON(github) }}"
+
+      # Upload test report
+      - name: Test Report 
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+            name: Test Report
+            path: report/
