@@ -4,9 +4,12 @@
   "description": "Repository for NMIT SDV502 assessment 2 2023.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node jasmine-casts-1.0/2.Jasmine-functions/end/calculator.spec.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^5.1.0"
+  }
 }
