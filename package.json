@@ -4,7 +4,7 @@
   "description": "Repository for NMIT SDV502 assessment 2 2023.",
   "main": "index.js",
   "scripts": {
-    "test": "node jasmine-casts-1.0/2.Jasmine-functions/end/calculator.spec.js"
+    "test": "jasmine-browser-runner runSpecs"
   },
   "keywords": [],
   "author": "",
