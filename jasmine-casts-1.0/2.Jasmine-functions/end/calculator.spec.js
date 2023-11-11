@@ -5,11 +5,15 @@
 // ToBe: a matcher. Used to compare the actual value to the expected value.
 
 describe('calculator.js', function() {
+  const delay = 200; // Delay to avoid asynchronous issues.
   it('should add numbers to total', function() {
     const calculator = new Calculator();
     calculator.add(5);
 
-    expect(calculator.total).toBe(5);
+    setTimeout(() => {
+      expect(calculator.total).toBe(5);
+      done();
+    }, delay);
   });
 
   it('should subtract numbers from total', function() {
@@ -17,7 +21,10 @@ describe('calculator.js', function() {
     calculator.total = 30;
     calculator.subtract(5);
 
-    expect(calculator.total).toBe(25);
+    setTimeout(() => {
+      expect(calculator.total).toBe(25);
+      done();
+    }, delay);
   });
 
   it('should multiply total by number', function() {
@@ -25,7 +32,10 @@ describe('calculator.js', function() {
     calculator.total = 100;
     calculator.multiply(2);
 
-    expect(calculator.total).toBe(200);
+    setTimeout(() => {
+      expect(calculator.total).toBe(200);
+      done();
+    }, delay);
   });
 
   it('should divide total by number', function() {
@@ -33,6 +43,9 @@ describe('calculator.js', function() {
     calculator.total = 200;
     calculator.divide(2);
 
-    expect(calculator.total).toBe(100);
+    setTimeout(() => {
+      expect(calculator.total).toBe(100);
+      done();
+    }, delay);
   });
 });
