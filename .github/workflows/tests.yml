@@ -17,6 +17,15 @@ jobs:
 
     # Steps to complete the job
     steps:
+      # Start Chrome manually
+      - name: Start Chrome
+        run: google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+
+      # Wait for Chrome to start
+      - name: Wait for Chrome
+        run: sleep 5
+
+
       # Checkout the code
       - name: Get Code
         uses: actions/checkout@v3
