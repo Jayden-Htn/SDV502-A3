@@ -17,15 +17,6 @@ jobs:
 
     # Steps to complete the job
     steps:
-      - name: Check Chrome Errors
-        run: |
-          google-chrome --version
-          chromedriver --version
-          google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &> chrome_output.txt || cat chrome_output.txt
-
-      - name: Display Chrome Output
-        run: cat chrome_output.txt
-
       # Checkout the code
       - name: Get Code
         uses: actions/checkout@v3
