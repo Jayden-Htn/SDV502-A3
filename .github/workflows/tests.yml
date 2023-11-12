@@ -38,11 +38,3 @@ jobs:
       # Display test results
       - name: Output Github Information
         run: echo " ${{ toJSON(github) }}"
-
-      # Upload test report
-      - name: Test Report 
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-            name: Test Report
-            path: report/
