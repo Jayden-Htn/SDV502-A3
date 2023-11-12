@@ -17,17 +17,14 @@ jobs:
 
     # Steps to complete the job
     steps:
-      # Start Chrome manually
-      - name: Start Chrome
-        run: google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-
-      # Wait for Chrome to start
-      - name: Wait for Chrome
-        run: sleep 5
-
-      # Check for Chrome errors
       - name: Check Chrome Errors
-        run: cat /var/log/chrome/chrome.log
+        run: |
+          google-chrome --version
+          chromedriver --version
+          google-chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &> chrome_output.txt || cat chrome_output.txt
+
+      - name: Display Chrome Output
+        run: cat chrome_output.txt
 
       # Checkout the code
       - name: Get Code
