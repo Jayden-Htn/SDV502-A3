@@ -25,6 +25,9 @@ jobs:
       - name: Wait for Chrome
         run: sleep 5
 
+      # Check for Chrome errors
+      - name: Check Chrome Errors
+        run: cat /var/log/chrome/chrome.log
 
       # Checkout the code
       - name: Get Code
