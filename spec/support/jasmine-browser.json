@@ -16,6 +16,7 @@
     "random": true
   },
   "browser": {
-    "name": "chrome"
+    "name": "chrome",
+    "args": ["--headless", "--disable-gpu", "--remote-debugging-port=9222"]
   }
 }
