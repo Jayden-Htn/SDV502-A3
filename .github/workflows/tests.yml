@@ -1,12 +1,9 @@
-# Workflow to unit tests on push to develop branch and pull request to main branch
-
+# Workflow to unit test on push
 name: Unit Tests
 
 # Trigger the workflow on push or pull request,
 on:
   push:
-    branches: "develop"
-  pull_request:
     branches: "main"
 
   # Allows you to run this workflow manually from the Actions tab
