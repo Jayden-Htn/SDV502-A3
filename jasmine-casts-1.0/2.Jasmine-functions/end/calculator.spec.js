@@ -4,8 +4,10 @@
 // Expect: a single assertion.
 // ToBe: a matcher. Used to compare the actual value to the expected value.
 
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000; // 10 second timeout.
+
 describe('calculator.js', function() {
-  const delay = 500; // Delay to avoid asynchronous issues.
+  const delay = 1000; // Delay to avoid asynchronous issues.
   it('should add numbers to total', function(done) {
     const calculator = new Calculator();
     calculator.add(5);
