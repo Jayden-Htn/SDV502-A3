@@ -6,7 +6,7 @@
 
 describe('calculator.js', function() {
   const delay = 500; // Delay to avoid asynchronous issues.
-  it('should add numbers to total', function() {
+  it('should add numbers to total', function(done) {
     const calculator = new Calculator();
     calculator.add(5);
 
@@ -16,7 +16,7 @@ describe('calculator.js', function() {
     }, delay);
   });
 
-  it('should subtract numbers from total', function() {
+  it('should subtract numbers from total', function(done) {
     const calculator = new Calculator();
     calculator.total = 30;
     calculator.subtract(5);
@@ -27,7 +27,7 @@ describe('calculator.js', function() {
     }, delay);
   });
 
-  it('should multiply total by number', function() {
+  it('should multiply total by number', function(done) {
     const calculator = new Calculator();
     calculator.total = 100;
     calculator.multiply(2);
@@ -38,7 +38,7 @@ describe('calculator.js', function() {
     }, delay);
   });
 
-  it('should divide total by number', function() {
+  it('should divide total by number', function(done) {
     const calculator = new Calculator();
     calculator.total = 200;
     calculator.divide(2);
